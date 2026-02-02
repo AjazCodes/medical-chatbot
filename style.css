@@ -1,0 +1,388 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,1,0');
+
+/* ========================================
+   PREMIUM MEDICAL CHATBOT UI - PRO DESIGN SYSTEM
+   ======================================== */
+
+/* ========================================
+   CORE STYLES (THEME AGNOSTIC)
+   ======================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+[data-theme="dark"] ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* Hide Streamlit components that shouldn't occupy space */
+div[data-testid="stMarkdownContainer"]>div:empty {
+    display: none !important;
+}
+
+html,
+body,
+[data-testid="stAppViewContainer"],
+.main {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-main) !important;
+    background-color: var(--bg-main) !important;
+}
+
+.stApp {
+    background-color: var(--bg-main) !important;
+}
+
+/* ========================================
+   SIDEBAR - SLEEK & MODERN
+   ======================================== */
+section[data-testid="stSidebar"] {
+    background-color: var(--sidebar-bg) !important;
+    border-right: 1px solid var(--border-color);
+}
+
+.sidebar-header {
+    text-align: center;
+    padding-bottom: 2rem;
+}
+
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p,
+section[data-testid="stSidebar"] label p {
+    color: var(--text-main) !important;
+    font-weight: 600 !important;
+}
+
+/* Specific styling for st.toggle visibility */
+[data-testid="stWidgetLabel"] p {
+    color: var(--text-main) !important;
+    font-weight: 700 !important;
+}
+
+/* Targeting Streamlit Toggle (st.toggle) */
+[data-testid="stCheckbox"] div[role="switch"] {
+    background-color: #4A5568 !important;
+    /* Dark Grey track initially */
+    border: 1px solid #4A5568 !important;
+}
+
+/* Navy track ONLY when active */
+[data-testid="stCheckbox"] div[role="switch"][aria-checked="true"] {
+    background-color: #000080 !important;
+    border-color: #000080 !important;
+}
+
+/* Ensure handle/thumb is white/visible */
+[data-testid="stCheckbox"] div[role="switch"]>div {
+    background-color: white !important;
+}
+
+
+/* ========================================
+   BUTTONS - LIQUID GLASS / GLASSMORPHISM
+   ======================================== */
+.stButton>button {
+    width: 100% !important;
+    border-radius: 16px !important;
+    padding: 0.8rem 1.2rem !important;
+    font-weight: 600 !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    /* Lighter background for Light Mode */
+    color: var(--text-main) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+    backdrop-filter: blur(12px) !important;
+    -webkit-backdrop-filter: blur(12px) !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05) !important;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+
+[data-theme="dark"] .stButton>button {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.07) !important;
+}
+
+.stButton>button:hover {
+    border-color: #6366f1 !important;
+    background: rgba(99, 102, 241, 0.1) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.2) !important;
+}
+
+/* Auth & Action Buttons */
+.stButton>button[kind="primary"],
+.stFormSubmitButton>button {
+    background: var(--primary-gradient) !important;
+    color: white !important;
+    border: none !important;
+    box-shadow: 0 10px 20px -5px rgba(99, 102, 241, 0.3) !important;
+}
+
+/* ========================================
+   CARDS - GLASSMORPHISM TOUCH
+   ======================================== */
+.medical-card {
+    background: var(--bg-card) !important;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 1.8rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-main);
+    backdrop-filter: blur(10px);
+}
+
+/* ========================================
+   TYPOGRAPHY - PRO LEVEL
+   ======================================== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    color: var(--heading-color) !important;
+}
+
+h1 {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 800 !important;
+    letter-spacing: -0.02em;
+}
+
+p,
+span,
+label,
+li {
+    color: var(--text-main) !important;
+}
+
+/* ========================================
+   CHAT - MODERN & CLEAN
+   ======================================== */
+.user-message {
+    background: var(--primary-gradient);
+    color: white !important;
+    padding: 1.1rem 1.4rem;
+    border-radius: 20px 20px 4px 20px;
+    margin: 0.6rem 0;
+    max-width: 82%;
+    float: right;
+    clear: both;
+    box-shadow: 0 8px 16px -4px rgba(99, 102, 241, 0.2);
+}
+
+.bot-message {
+    background: var(--bot-msg-bg);
+    color: var(--text-main) !important;
+    padding: 1.1rem 1.4rem;
+    border-radius: 20px 20px 20px 4px;
+    margin: 0.6rem 0;
+    max-width: 82%;
+    float: left;
+    clear: both;
+    border: 1px solid var(--border-color);
+}
+
+.material-symbols-rounded {
+    font-family: 'Material Symbols Rounded' !important;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+}
+
+.user-message .material-symbols-rounded,
+.bot-message .material-symbols-rounded {
+    font-size: 1.25rem !important;
+    vertical-align: middle;
+    margin-right: 8px;
+}
+
+/* ========================================
+   INPUT FIELDS
+   ======================================== */
+.stTextInput input,
+.stTextArea textarea,
+.stNumberInput input,
+.stSelectbox div[data-baseweb="select"],
+input,
+textarea {
+    background-color: var(--input-bg) !important;
+    color: var(--text-main) !important;
+    caret-color: var(--text-main) !important;
+    /* Ensure cursor is visible */
+    border: 1px solid #E2E8F0 !important;
+    /* Lighter border for Light Mode */
+    border-radius: 14px !important;
+    padding: 0.75rem 1rem !important;
+    transition: all 0.2s ease !important;
+}
+
+[data-theme="dark"] .stTextInput input,
+[data-theme="dark"] .stTextArea textarea,
+[data-theme="dark"] .stNumberInput input,
+[data-theme="dark"] .stSelectbox div[data-baseweb="select"] {
+    border: 1px solid var(--border-color) !important;
+}
+
+/* Fix dropdown lists for both themes using variables */
+div[data-baseweb="popover"],
+div[data-baseweb="popover"]>div,
+ul[role="listbox"],
+li[role="option"] {
+    background-color: var(--bg-card) !important;
+    color: var(--text-main) !important;
+    border-color: var(--border-color) !important;
+}
+
+li[role="option"]:hover {
+    background-color: var(--bot-msg-bg) !important;
+}
+
+/* Ensure selected items in multiselect are visible */
+div[data-baseweb="tag"] {
+    background: var(--primary-gradient) !important;
+    color: white !important;
+}
+
+.stTextInput input:focus {
+    border-color: #6366f1 !important;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.15) !important;
+}
+
+/* ========================================
+   AUTH WRAPPER (LOGIN)
+   ======================================== */
+.auth-wrapper {
+    max-width: 480px;
+    margin: 2rem auto;
+    padding: 3rem;
+    border-radius: 32px;
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow-main);
+    text-align: center;
+}
+
+.auth-logo {
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.auth-title {
+    color: var(--text-main);
+    font-weight: 800;
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+/* ========================================
+   SIDEBAR STABILIZATION
+   ======================================== */
+section[data-testid="stSidebar"] {
+    width: 280px !important;
+    background: var(--sidebar-bg) !important;
+    border-right: 1px solid var(--border-color);
+}
+
+/* Global Sidebar Text Protection */
+[data-testid="stSidebar"] * {
+    white-space: nowrap !important;
+}
+
+/* Simple Navigation Buttons */
+.stButton>button {
+    text-align: left !important;
+    font-family: 'Plus Jakarta Sans', sans-serif !important;
+    font-size: 0.95rem !important;
+    font-weight: 600 !important;
+    color: var(--text-main) !important;
+    background: transparent !important;
+    border: 1px solid transparent !important;
+    border-radius: 12px !important;
+    padding: 0.6rem 1rem !important;
+    transition: all 0.2s ease !important;
+    margin-bottom: 4px !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+}
+
+/* Sidebar Icon Accent */
+[data-testid="stSidebar"] [data-testid="stIconMaterial"] {
+    color: #4FD1C5 !important;
+    font-size: 1.25rem !important;
+}
+
+.stButton>button:hover {
+    background: rgba(129, 140, 248, 0.1) !important;
+    border-color: rgba(129, 140, 248, 0.2) !important;
+    color: #818CF8 !important;
+    transform: translateX(5px);
+}
+
+/* ========================================
+   PREMIUM MAIN CONTENT CARDS
+   ======================================== */
+.feature-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+    height: 100%;
+    box-shadow: var(--shadow-main);
+}
+
+.feature-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon-3d {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1rem;
+    display: block;
+}
+
+/* ========================================
+   FOOTER
+   ======================================== */
+.footer {
+    text-align: center;
+    padding: 3rem 0;
+    color: var(--text-muted) !important;
+    font-size: 0.9rem;
+    font-weight: 500;
+}

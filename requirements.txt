@@ -1,0 +1,10 @@
+streamlit
+langchain
+langchain-openai
+langchain-community
+pandas
+plotly
+fpdf2
+passlib
+langchain-groq
+python-dotenv
