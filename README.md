@@ -35,7 +35,7 @@ medical-chatbot/
 │── README.md            # Project documentation
  Installation & Setup Guide
 1️⃣ Clone Repository
-git clone https://github.com/your-username/medical-chatbot.git
+git clone (your repository)
 cd medical-chatbot
 2️⃣ Create Virtual Environment
 python -m venv venv
