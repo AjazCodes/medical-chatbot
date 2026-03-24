@@ -43,18 +43,46 @@ Deployment: Streamlit Cloud
 
 bash
 medical-chatbot/
+
+
+
 │── app.py
+
+
+
 │── requirements.txt
+
+
+
 │── .env
+
+
+
 │── assets/
+
+
+
 │── README.md
 
 
 
 How It Works
+
+
+
 -User enters a medical-related query
+
+
+
 -Query is sent to AI API
+
+
+
 -AI processes input using NLP
+
+
+
+
 -Response is displayed instantly
 
 
